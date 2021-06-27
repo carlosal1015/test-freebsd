@@ -25,4 +25,6 @@ jobs:
           pkg info
           freebsd-version
           freebsd-update fetch install --not-running-from-cron
+          portsnap fetch update
+          cd /usr/ports/math/R/ && make install clean
           # env
