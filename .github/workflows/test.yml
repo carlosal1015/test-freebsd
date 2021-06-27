@@ -30,5 +30,6 @@ jobs:
           portsnap extract
           portsnap update --interactive
           portsnap upgrade --interactive
-          cd /usr/ports/math/R/ && make install clean
+          cd /usr/ports/math/dune-common/ && make install clean
+          pkg install math/dune-common
           # env
