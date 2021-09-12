@@ -31,5 +31,5 @@ jobs:
           #portsnap update --interactive
           #portsnap upgrade --interactive
           cd /usr/ports/math/psurface/ && make install clean
-          pkg install math/psurface
+          pkg install psurface
           # env
