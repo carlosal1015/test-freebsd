@@ -24,12 +24,12 @@ jobs:
           whoami
           pkg info
           freebsd-version
-          freebsd-update fetch install --not-running-from-cron
-          portsnap cron
+          #freebsd-update fetch install --not-running-from-cron
+          #portsnap cron
           portsnap fetch --interactive
           portsnap extract
-          portsnap update --interactive
-          portsnap upgrade --interactive
-          cd /usr/ports/math/dune-common/ && make install clean
-          pkg install math/dune-common
+          #portsnap update --interactive
+          #portsnap upgrade --interactive
+          cd /usr/ports/math/psurface/ && make install clean
+          pkg install math/psurface
           # env
