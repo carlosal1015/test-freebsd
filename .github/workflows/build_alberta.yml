@@ -1,0 +1,24 @@
+name: Build math/alberta from Fresh ports
+
+on: [push]
+
+jobs:
+  testfreebsd:
+    runs-on: macos-latest
+    name: A job to run test FreeBSD
+    env:
+      MYTOKEN: ${{ secrets.MYTOKEN }}
+      MYTOKEN2: "value2"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build in FreeBSD 13.0
+        id: test
+        uses: vmactions/freebsd-vm@v0.1.5
+        with:
+          usesh: true
+          prepare: pkg install -y curl
+          run: |
+            pkg info
+            portsnap fetch --interactive >/dev/null 2>&1
+            portsnap extract >/dev/null 2>&1
+            cd /usr/ports/math/alberta/ && make install clean
