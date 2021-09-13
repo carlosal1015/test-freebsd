@@ -22,3 +22,4 @@ jobs:
             portsnap fetch --interactive >/dev/null 2>&1
             portsnap extract >/dev/null 2>&1
             cd /usr/ports/math/psurface/ && make install clean
+            pkg info

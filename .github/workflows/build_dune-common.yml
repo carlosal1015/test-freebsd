@@ -1,4 +1,4 @@
-name: Build math/alberta from Fresh ports
+name: Build math/dune-common from Fresh ports
 
 on: [push]
 
@@ -21,5 +21,5 @@ jobs:
             pkg info
             portsnap fetch --interactive >/dev/null 2>&1
             portsnap extract >/dev/null 2>&1
-            cd /usr/ports/math/alberta/ && make install clean
+            cd /usr/ports/math/dune-common/ && make install clean
             pkg info
