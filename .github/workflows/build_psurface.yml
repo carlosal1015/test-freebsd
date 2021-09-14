@@ -16,10 +16,8 @@ jobs:
         uses: vmactions/freebsd-vm@v0.1.5
         with:
           usesh: true
-          prepare: pkg install -y curl
           run: |
-            pkg info
             portsnap fetch --interactive >/dev/null 2>&1
             portsnap extract >/dev/null 2>&1
             cd /usr/ports/math/psurface/ && make install clean
-            pkg info
+            pkg info -lbBs psurface
